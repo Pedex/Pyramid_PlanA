@@ -1,0 +1,1 @@
+"C:/Users/thoma/OneDrive/Projects_For_The_Web/Fliesen Rothe/PlanA/Pyramid_PlanA/env/Scripts/py.test.exe" "C:/Users/thoma/OneDrive/Projects_For_The_Web/Fliesen Rothe/PlanA/Pyramid_PlanA/pyramid_plana/tests.py" -q

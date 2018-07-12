@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>One Page Wonder - Start Bootstrap Template</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+      <link href="{{request.static_url('pyramid_plana:static/content/bootstrap.min.css')}}" rel="stylesheet">
+   <link href="{{request.static_url('pyramid_plana:static/content/jquery-ui.css')}}" rel="stylesheet">
+  <link href="{{request.static_url('pyramid_plana:static/content/default_planner_multiweek.css')}}" rel="stylesheet">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
+  </head>
+
+  <body id="body">
+  <div id="specialdiv"></div>
+
+  <!--Begin head-input elements: -->
+<div class="controlcenter">
+    <div class="toggleCurrentViewType">
+       <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-secondary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Woche
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Monat
+  </label>
+</div>
+    </div>
+
+</div>
+<!-- Add nice content! add employer form and switch for week/month-->
+
+    <!-- Begin main element (planner) -->
+<div class="container-fluid">
+  <div class="btn-group" role="group" aria-label="Basic example">
+                     <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-arrow-left"></span></button>
+                     <input type="text" id="abc">
+                     <button type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                  </div>
+    <div class="row">
+      <div class="col-md-2" id="leftEmployerWrapper" style="border: double" >
+           <!-- Employerstable title (free): -->
+          <div class="row" style="background-color: white;">
+              <div class="col-md-12" style="height: 45px">Kalenderwoche:
+              </div>
+          </div>
+                <div class="row" style="background-color: white;">
+              <div class="col-md-12" style="height: 45px">
+              </div>
+          </div>
+        <!-- Employerstable body: -->
+       {% for employer in employers %}
+       <div class="row" style="min-height: 45px; border-bottom: double">
+       <div style="background-color: darkgray;" class="col-md-3">R</div>
+           <div style="background-color: darkgray;" class="col-md-9"><strong>{{employer.name}}</strong></div>
+           </div>
+       {%endfor%}
+   </div>
+      <!-- Main planner-table wrapper (right):-->
+      <div class="col-md-10" id="mainCollumRight" style="border: double;">
+           <!-- Header dates:-->
+        <div id="mainContentWrapper" class="row">
+
+        {% for weekNumber in range(amountOfWeeks) %}
+          <div class="col" style="background-color: bisque; border: double">
+              <div class="row mainRow" style="height: 45px">
+             {%  for collumDate in range(daysInWeek) %}
+           <div class="col-md-2"><strong class="headerCollum{{ collumDate }}"></strong></div>
+        {%endfor%}
+          </div>
+          <div class="row" style="height: 45px">
+              <div class="col"></div>
+            </div>
+            </div>
+       {% endfor %}
+       </div>
+          <!-- Main planner - main collumview: -->
+      {% for employer in employers %}
+       <div class="row employerMainRow" style="height: 45px; border: double; background-color: transparent;">
+           <div class="col employerMCol{{ employer.employer_id }}" style="height: inherit; background-color: transparent">
+           </div>
+       </div>
+      
+       {%endfor%} 
+
+
+</div>
+</div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small" id="footertext">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- 
+      /.container -->
+    </footer>
+
+    <!-- Define some variable parsings to js for template access: (use safe filter for dic/list)-->
+    <script>
+        var employers = {{ employers | safe }};
+        var viewedAmountWeeks = {{ amountOfWeeks  }};
+        var viewedAmountCollums = {{ amountOfCollums }};
+    </script>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{request.static_url('pyramid_plana:static/scripts/jquery-3.3.1.js')}}"></script>
+    <script src="{{request.static_url('pyramid_plana:static/scripts/jquery-ui.js')}}"></script>
+    <script type="text/javascript" src="{{request.static_url('pyramid_plana:static/scripts/jquery-custom-mainplanner_multiweek.js')}}"></script>
+   <script src="{{request.static_url('pyramid_plana:static/scripts/bootstrap.bundle.min.js')}}"></script>
+   <script type="text/javascript" src="{{request.static_url('pyramid_plana:static/scripts/moment.js')}}"></script>
+  </body>
+
+</html>

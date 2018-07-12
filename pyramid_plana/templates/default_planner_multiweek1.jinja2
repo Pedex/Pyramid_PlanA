@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>One Page Wonder - Start Bootstrap Template</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+      <link href="{{request.static_url('pyramid_plana:static/content/bootstrap.min.css')}}" rel="stylesheet">
+   <link href="{{request.static_url('pyramid_plana:static/content/jquery-ui.css')}}" rel="stylesheet">
+  <link href="{{request.static_url('pyramid_plana:static/content/default_planner_multiweek.css')}}" rel="stylesheet">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
+      <link rel="stylesheet" href="{{request.static_url('deform:static/css/form.css')}}" type="text/css" />
+
+     <script src="{{request.static_url('pyramid_plana:static/scripts/jquery-3.3.1.js')}}"></script>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+          <script src="{{request.static_url('pyramid_plana:static/scripts/jquery-ui.js')}}"></script>
+ <script type="text/javascript" src="{{request.static_url('deform:static/scripts/deform.js')}}"></script>
+    <script src="{{request.static_url('pyramid_plana:static/scripts/bootstrap.bundle.min.js')}}"></script>
+   <script type="text/javascript" src="{{request.static_url('pyramid_plana:static/scripts/moment.js')}}"></script>
+  </head>
+
+  <body id="body">
+
+
+  <!-- Popup windows: -->
+
+   <div id="employerInsert_popup">
+      <div class="employerInsert_popup_container">
+     <div id="popup_employer_topbanner"><h3 id="popup_employer_topbanner_h2">Mitarbeiter hinzufügen</h3></div>
+
+          <div class="employerFormContainer"> {{ form1 | safe }} </div>
+          <div class="btn-toolbar" id="employerInsertToolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn employerInsert_popup_close" style="border: ridge">Abbrechen</button>
+        </div>
+  </div>
+      </div>
+  </div>
+
+
+  <!-- Event Insert Popup -->
+  <div id="eventInsert_popup">
+      <div class="eventInsert_popup_container">
+     <div id="popup_eventEdit_topbanner"><h3 id="popup_eventEdit_topbanner_h2">Ereignis hinzufügen</h3></div>
+
+          <div class="eventFormContainer"> {{ form2 | safe }} </div>
+          <div class="btn-toolbar" id="eventInsertToolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn eventInsert_popup_close" style="border: ridge">Abbrechen</button>
+        </div>
+  </div>
+      </div>
+  </div>
+
+
+
+  <!-- Event Edit Popup -->
+ <div id="eventEdit_popup">
+      <div class="eventEdit_popup_container">
+     <div id="popup_eventEdit_topbanner"><h3 id="popup_eventEdit_topbanner_h2">Ereignis Anzeigen</h3></div>
+
+          <div class ="eventEditFormContainer" id="eventEditFormContainer"> </div>
+
+
+    <div class="btn-toolbar evEditTools"  style="display: block" id="eventEditToolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn eventEdit_popup_close" style="border: ridge">Abbrechen</button>
+        </div>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn eventEdit_edit" style="border: ridge; background-color: #00a1ff">Bearbeiten</button>
+        </div>
+  </div>
+
+                  <div class="btn-toolbar evEditEditTools" id="eventEdit_editToolbar" role="toolbar" style="display: none" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn eventEdit_popup_close" style="border: ridge">Abbrechen</button>
+        </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn eventEdit_delete" style="border: ridge; background-color: #fa6655">Löschen</button>
+        </div>
+  </div>
+      </div>
+  </div>
+
+<!-- Employer Edit Popup -->
+    <div id="employerEdit_popup">
+      <div class="employerEdit_popup_container">
+     <div id="popup_employerEdit_topbanner"><h3 id="popup_employerEdit_topbanner_h2">Mitarbeiter Anzeigen</h3></div>
+
+          <div id="employerEditFormContainer"> </div>
+
+
+          <div class="btn-toolbar emEditTools"  style="display: none" id="employerEditToolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn employerEdit_popup_close" style="border: ridge">Abbrechen</button>
+        </div>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn employerEdit_edit" style="border: ridge; background-color: #00a1ff">Bearbeiten</button>
+        </div>
+  </div>
+
+                  <div class="btn-toolbar" id="employerEdit_editToolbar" role="toolbar" style="display: none" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn employerEdit_popup_close" style="border: ridge">Abbrechen</button>
+        </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn employerEdit_delete" style="border: ridge; background-color: #fa6655">Löschen</button>
+        </div>
+  </div>
+
+  </div>
+    </div>
+  >
+
+
+
+ <!-- End of popup screens -->
+
+  <!--Begin head-input elements: -->
+  <div class="container-fluid">
+  <div class="row">
+<div class="controlcenter col-md-4">
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-secondary viewShiftController" id="viewShiftLeft"><</button>
+    <label> Woche </label>
+    <button type="button" class="btn btn-secondary viewShiftController" id="viewShiftRight">></button>
+  </div>
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-secondary viewShiftController" id="viewShiftLeftMonth"><</button>
+          <label> Monat </label>
+          <button type="button" class="btn btn-secondary viewShiftController" id="viewShiftRightMonth">></button>
+  </div>
+
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <button type="button" class="btn btn-secondary viewShiftController" id="viewShiftZoomIn">+</button>
+    <button type="button" class="btn btn-secondary viewShiftController" id="viewShiftZoomOut">-</button>
+  </div>
+</div>
+</div>
+<div class="col-md-7">
+    <div class="row">
+    <div class="col-md-3"><img src="{{request.static_url('pyramid_plana:static/assets/logo.jpg')}}" class="rounded">
+</div>
+        <div class="col-md-9"><h3><br><strong>PlanA</strong></h3></div>
+</div>
+</div>
+<div claas="insertionBar col-md-1">
+   <div class="btn-group-vertical" style="margin-right: 3px;">
+       <label>Hinzufügen:</label>
+  <button type="button" class="btn btn-primary employerInsert_popup_open">Mitarbeiter</button>
+  <button type="button" class="btn btn-primary eventInsert_popup_open">Ereignis</button>
+</div>
+</div>
+      </div>
+  </div>
+
+    <!-- Begin main element (planner) -->
+
+
+<div class="grid-container" style="max-width: 100%;">
+
+   <div class="headLeft"></div>
+    <div class="leftWrapper" style="grid-template-rows: repeat({{ amountOfEmployers }}, 55px)">
+
+    {% for employer in employers %}
+         <div class="employerInfoCollum employerEdit_popup_open" id="employerInfoCollum{{ employer.employer_id }}" style="height: 55px; grid-row: span 1">{{ employer.name }}</div>
+        {% endfor %}
+    </div>
+
+
+  <div class="rightWrapper" style="grid-template-rows: repeat({{ amountOfEmployers+2 }}, 55px); grid-template-columns: repeat({{ amountOfWeeks }}, {{ requestWeekDivWidth }}%);">
+    {% for weekNum in range(1, amountOfWeeks+1) %}
+        <div class="weekCollum" id="weekCollum{{ weekNum }}" style="grid-row: span {{ amountOfEmployers+2 }} ; grid-column: {{ weekNum }} / {{ weekNum }}+1; grid-template-columns: repeat(6,{requestDayDivWidth});  grid-template-rows: repeat({{ amountOfEmployers+2 }}, 55px)">
+             <div class="weekIndicator" id="weekIndicator{{ weekNum }}"></div>
+            {% for dayNum in range(1, daysInWeek+1) %}
+             <div class="daysIndicator" id="daysIndicator{{ dayNum }}{{ weekNum }}"> </div>
+           {% endfor %}
+
+           {% for employer in employers %}
+               <div class="weekdayCol" id="weekday{{ weekNum }}{{ employer.employer_id }}"></div>
+               <div class="weekendCol"></div>
+               {% endfor %}
+        </div>
+ {% endfor %}
+
+
+  </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small" id="footertext">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- 
+      /.container -->
+    </footer>
+
+    <!-- Define some variable parsings to js for template access: (use safe filter for dic/list)-->
+    <script>
+        var employers = {{ employers | safe }};
+        var viewedAmountWeeks = {{ amountOfWeeks }};
+        var viewedAmountCollums = {{ amountOfCollums | safe }};
+    </script>
+    
+    <!-- Bootstrap core JavaScript -->
+
+
+
+
+     <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+
+           <script type="text/javascript" src="{{request.static_url('pyramid_plana:static/scripts/jquery_multiweek_insertion.js')}}"></script>
+        <script type="text/javascript" src="{{request.static_url('pyramid_plana:static/scripts/jquery-custom-mainplanner_multiweek.js')}}"></script>
+
+  </body>
+
+</html>

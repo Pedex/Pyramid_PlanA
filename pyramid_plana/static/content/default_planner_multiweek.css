@@ -1,0 +1,259 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: white;
+}
+
+
+.employerInsert_popup_container {
+    background-color: #f1f5fa;
+    min-width: 35vw;
+    min-height: 20vw;
+}
+
+#popup_employer_topbanner {
+    background-color: #00a1ff;
+    color: #ffffff;
+    width: 100%;
+    height: 33px;
+    font-size: 20px;
+    border: groove;
+
+}
+
+#popup_employer_topbanner_h2 {
+    position: relative;
+    transform: translateX(50%);
+    font-size: 20px;
+}
+
+.employerFormContainer {
+    margin-left: 10px;
+}
+
+#employerInsertToolbar {
+    margin-left: 60%;
+}
+
+
+
+.eventInsert_popup_container {
+    background-color: #f6faf5;
+    min-width: 35vw;
+    min-height: 20vw;
+}
+
+#popup_event_topbanner {
+    background-color: #00a1ff;
+    color: #ffffff;
+    width: 100%;
+    height: 33px;
+    font-size: 20px;
+    border: groove;
+
+}
+
+#popup_event_topbanner_h2 {
+    position: relative;
+    transform: translateX(50%);
+    font-size: 20px;
+}
+
+.eventFormContainer {
+    margin-left: 10px;
+}
+
+#eventInsertToolbar {
+    margin-left: 60%;
+}
+
+
+.employerEdit_popup_container {
+    background-color: #f6faf5;
+    min-width: 35vw;
+    min-height: 20vw;
+}
+
+#popup_employerEdit_topbanner {
+    background-color: #00a1ff;
+    color: #ffffff;
+    width: 100%;
+    height: 33px;
+    font-size: 20px;
+    border: groove;
+
+}
+
+#popup_employerEdit_topbanner_h2 {
+    position: relative;
+    transform: translateX(50%);
+    font-size: 20px;
+}
+
+#employerEditFormContainer{
+    margin-left: 10px;
+}
+
+
+
+
+.eventEdit_popup_container {
+    background-color: #f6faf5;
+    min-width: 35vw;
+    min-height: 20vw;
+}
+
+#popup_eventEdit_topbanner {
+    background-color: #00a1ff;
+    color: #ffffff;
+    width: 100%;
+    height: 33px;
+    font-size: 20px;
+    border: groove;
+
+}
+
+#popup_eventEdit_topbanner_h2 {
+    position: relative;
+    transform: translateX(50%);
+    font-size: 20px;
+}
+
+#eventEditFormContainer{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 110px auto;
+  padding: 10px;
+
+}
+.leftWrapper {
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+      display: grid;
+    grid-template-columns: 100%;
+
+}
+
+.rightWrapper {
+    grid-column: 2 / 22;
+    grid-row: 1 / last-line;
+    display: grid;
+
+}
+
+.headLeft{
+    height: 90px;
+    border-top: double;
+    border-left: double;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.headRight{
+
+}
+
+.dateHeadCollum {
+    grid-row: 2 / 3;
+    border: double;
+}
+
+.weekCollum {
+    border: double;
+
+
+    display: grid;
+}
+
+.weekIndicator {
+    grid-column: span 6;
+    grid-row: span 1;
+    border-bottom: solid;
+    border-width: 1px;
+
+}
+
+.daysIndicator {
+    grid-column: span 1;
+    grid-row: span 1;
+    border: dashed;
+    border-width: 2px;
+    background-color: #d9d9d9;
+}
+
+
+.employerInfoCollum {
+     grid-column: 1 / 2;
+     border: double;
+    background-color: #99a4ab;
+}
+
+.weekdayCol {
+    grid-column: span 5;
+    grid-row: span 1;
+    border: dashed;
+    border-width: 1px
+}
+
+.weekendCol {
+   grid-column: span 1;
+    grid-row: span 1;
+    border: dashed;
+    border: 1px;
+    background-color: #6d6e6c;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.baustelle {
+    background-color: #eeff6e;
+}
+
+.urlaub {
+    background-color: #bc5a50;
+}
